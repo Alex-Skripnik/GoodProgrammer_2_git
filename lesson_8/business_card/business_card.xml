@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<business_card>
+  <first_name>Олександр</first_name>
+  <second_name>Олександрович</second_name>
+  <last_name>Скріпрік</last_name>
+  <phone>+380660697943</phone>
+  <email>Skripnik.O.Olex@gmail.com</email>
+  <skills>Начинающий программист на Ruby</skills>
+</business_card>
