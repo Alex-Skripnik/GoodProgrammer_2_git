@@ -71,6 +71,12 @@ class Post
     return insert_row_id
   end
 
+  # Получает на вход хэш массив данных и должен заполнить свои поля
+  def load_data(data_hash)
+    @created_at = Time.parse(data_hash['created_at'])
+    #  todo: остальные специфичные поля должны заполнить дочерние классы
+  end
+
   # Этот метод записывает текущее состояние объекта в файл
    def save
     file = File.new(file_path, 'w:UTF-8')
@@ -101,7 +107,7 @@ class Post
       result = result[0] if result.is_a?Array
       db.close
 
-      if result.empty?
+      if result.nil? # здесь было empty? я поставил ni?
         puts "Такой id #{id} не найден в базе :("
         return nil
       else
@@ -136,6 +142,8 @@ class Post
       result = statement.execute! #(query) # выполняем
       statement.close
       db.close
+
+      return result
     end
   end
 
