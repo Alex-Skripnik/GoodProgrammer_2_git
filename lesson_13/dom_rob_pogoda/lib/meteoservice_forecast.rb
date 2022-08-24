@@ -53,7 +53,7 @@ class MeteoserviceForecast
   end
 
   def today?
-    @date = Date.today
+    @date == Date.today
   end
 
 end
